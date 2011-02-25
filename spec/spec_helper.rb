@@ -25,5 +25,3 @@ end
 RSpec.configure do |config|
   config.include Aef::NamespaceHelper::SpecHelper
 end
-
-puts $LOAD_PATH
