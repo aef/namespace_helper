@@ -70,7 +70,11 @@ module Aef
       # @example
       #   First::Second::Third.unprefixed_namespace_component_names # => ["First", "Second", "Third"]
       def unprefixed_namespace_component_names
-        self.name.split('::')
+        if self.name
+          self.name.split('::')
+        else
+          []
+        end
       end
       
       # Lists all namespace components' names
@@ -81,15 +85,19 @@ module Aef
       # @example
       #   First::Second::Third.namespace_component_names # => ["First", "First::Second", "First::Second::Third"]
       def namespace_component_names
-        unprefixed_namespace_components = self.name.split('::')
-      
-        names = []
-
-        while current = unprefixed_namespace_components.pop
-          names.unshift (unprefixed_namespace_components + [current]).join('::')
-        end
+        if self.name
+          unprefixed_namespace_components = self.name.split('::')
         
-        names
+          names = []
+
+          while current = unprefixed_namespace_components.pop
+            names.unshift (unprefixed_namespace_components + [current]).join('::')
+          end
+          
+          names
+        else
+          []
+        end
       end
       
       # Lists all namespace components
