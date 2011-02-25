@@ -69,53 +69,60 @@ describe Aef::NamespaceHelper do
         ['Aef', 'NamespaceHelper', 'SomeClass', 'SomeModule']
     end
 
-    it "should be OtherModule for Aef::NamespaceHelper::OtherModule" do
+    it "should list all unprefixed namespace component names for Aef::NamespaceHelper::OtherModule" do
       Aef::NamespaceHelper::OtherModule.unprefixed_namespace_component_names.should ==
         ['Aef', 'NamespaceHelper', 'OtherModule']
     end
 
-    it "should be OtherClass for Aef::NamespaceHelper::OtherModule::OtherClass" do
+    it "should list all unprefixed namespace component names for Aef::NamespaceHelper::OtherModule::OtherClass" do
       Aef::NamespaceHelper::OtherModule::OtherClass.unprefixed_namespace_component_names.should ==
         ['Aef', 'NamespaceHelper', 'OtherModule', 'OtherClass']
     end
+  end
+  
+  describe "namespace_component_names" do
+    it "should be an empty array for an anonymous class" do
+      @anonymous_class.
+        namespace_component_names.should == []
+    end
 
-    describe "namespace_component_names" do
-      it "should be an empty array for an anonymous class" do
-        @anonymous_class.
-          namespace_component_names.should == []
-      end
-  
-      it "should be an emtpy array for an anonymous module" do
-        @anonymous_module.
-          namespace_component_names.should == []
-      end
-  
-      it "should list all namespace component names for Aef::NamespaceHelper::SomeClass" do
-        Aef::NamespaceHelper::SomeClass.namespace_component_names.should == [
-          'Aef',
-          'Aef::NamespaceHelper',
-          'Aef::NamespaceHelper::SomeClass'
-        ]
-      end
-  
-      it "should namespace component names for Aef::NamespaceHelper::SomeClass::SomeModule" do
-        Aef::NamespaceHelper::SomeClass::SomeModule.namespace_component_names.should == [
-          'Aef',
-          'Aef::NamespaceHelper',
-          'Aef::NamespaceHelper::SomeClass',
-          'Aef::NamespaceHelper::SomeClass::SomeModule'
-        ]
-      end
-  
-      it "should be OtherModule for Aef::NamespaceHelper::OtherModule" do
-        Aef::NamespaceHelper::OtherModule.namespace_component_names.should ==
-          ['Aef', 'NamespaceHelper', 'OtherModule']
-      end
+    it "should be an emtpy array for an anonymous module" do
+      @anonymous_module.
+        namespace_component_names.should == []
+    end
 
-      it "should be OtherModule for Aef::NamespaceHelper::OtherModule::OtherClass" do
-        Aef::NamespaceHelper::OtherModule::OtherClass.namespace_component_names.should ==
-          ['Aef', 'NamespaceHelper', 'OtherModule']
-      end
+    it "should list all namespace component names for Aef::NamespaceHelper::SomeClass" do
+      Aef::NamespaceHelper::SomeClass.namespace_component_names.should == [
+        'Aef',
+        'Aef::NamespaceHelper',
+        'Aef::NamespaceHelper::SomeClass'
+      ]
+    end
+
+    it "should list all namespace component names for Aef::NamespaceHelper::SomeClass::SomeModule" do
+      Aef::NamespaceHelper::SomeClass::SomeModule.namespace_component_names.should == [
+        'Aef',
+        'Aef::NamespaceHelper',
+        'Aef::NamespaceHelper::SomeClass',
+        'Aef::NamespaceHelper::SomeClass::SomeModule'
+      ]
+    end
+
+    it "should list all namespace component names for Aef::NamespaceHelper::OtherModule" do
+      Aef::NamespaceHelper::OtherModule.namespace_component_names.should == [
+        'Aef',
+        'Aef::NamespaceHelper',
+        'Aef::NamespaceHelper::OtherModule'
+      ]
+    end
+
+    it "should list all namespace component names for Aef::NamespaceHelper::OtherModule::OtherClass" do
+      Aef::NamespaceHelper::OtherModule::OtherClass.namespace_component_names.should == [
+        'Aef',
+        'Aef::NamespaceHelper',
+        'Aef::NamespaceHelper::OtherModule',
+        'Aef::NamespaceHelper::OtherModule::OtherClass',        
+      ]
     end
   end
 end
