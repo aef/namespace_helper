@@ -1,0 +1,5 @@
+doc
+.yardoc
+.idea
+nbproject/private
+*.gem
