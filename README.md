@@ -20,7 +20,7 @@ namespace components of a class or module.
 Features / Problems
 -------------------
 
-This projects tries to conform to:
+This project tries to conform to:
 
 * [Semantic Versioning (2.0.0-rc.1)][5]
 * [Ruby Packaging Standard (0.5-draft)][6]
@@ -59,10 +59,8 @@ In a bundler Gemfile you should use the following:
 gem 'namespace_helper'
 ~~~~~
 
-By default, NamespaceHelper extends the Class and Module classes to allow their
-objects to be castable to Week and Week::Day. Additionally the Aef namespace is
-included into Object, so that you don't have to type the fully-qualified names
-of the classes. Should you really don't want this, use the following:
+By default, NamespaceHelper extends the Class and Module classes to allow make
+all classes and modules support the namespace helper methods. Should you really don't want this, use the following:
 
 ~~~~~ ruby
 require 'namespace_helper/bare'
