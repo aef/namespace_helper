@@ -17,11 +17,10 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-require 'aef/namespace_helper'
-
-module Aef::NamespaceHelper::SpecHelper
+unless defined?(Rubinius)
+  require 'simplecov'
+  SimpleCov.start
 end
 
-RSpec.configure do |config|
-  config.include Aef::NamespaceHelper::SpecHelper
-end
+require 'rspec'
+require 'pry'

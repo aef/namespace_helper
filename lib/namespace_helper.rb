@@ -17,14 +17,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+# Helper file to allow loading by gem name. Includes Aef::NamespaceHelper
+# into Class and Module to make namespace helper methods available on all
+# classes and modules
+
 require 'aef/namespace_helper'
 
-# @private
-class Class
-  include Aef::NamespaceHelper::ClassMethods
-end
-
-# @private
-class Module
-  include Aef::NamespaceHelper::ClassMethods
+[Class, Module].each do |object|
+  object.method(:include).call(Aef::NamespaceHelper::ClassMethods)
 end
