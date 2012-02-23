@@ -106,10 +106,6 @@ File::Constants.namespace_parent_name
 # => "File"
 ~~~~~
 
-The other way to load the library will enable the helper methods in every
-module and class:
-
-
 Requirements
 ------------
 
