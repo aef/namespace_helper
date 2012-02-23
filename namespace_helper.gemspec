@@ -17,27 +17,41 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-Gem::Specification.new do |spec|
-  spec.author = 'Alexander E. Fischer'
-  spec.add_development_dependency('rspec', '~> 2.4.0')
-  spec.add_development_dependency('yard', '~> 0.6.4')
-  spec.description = <<-EOS
-    NamespaceHelper provides a module with methods to ease namespace handling.
-    For example getting the unprefixed name, the namespace parent or a list of
-    namespace components of a class or module.
-  EOS
-  spec.rubyforge_project = 'aef'
-  spec.email = 'aef@raxys.net'
-  spec.extra_rdoc_files = 'README.rdoc'
-  spec.has_rdoc = true
-  spec.homepage = 'https://rubyforge.org/projects/aef/'
-  spec.license = 'GPL-3'
-  spec.name = 'namespace_helper'
-  spec.rdoc_options = ['--title', 'NamespaceHelper',
-                       '--main', 'README.rdoc',
-                       '--inline-source',
-                       '--line-numbers']
-  spec.required_ruby_version = '>= 1.8.7'
-  spec.summary = 'Helper methods for class/module namespace handling'
-  spec.version = '0.1.0'
+$LOAD_PATH << 'lib'
+
+require 'namespace_helper/bare'
+
+Gem::Specification.new do |s|
+  s.name        = 'namespace_helper'
+  s.version     = Aef::NamespaceHelper::VERSION.dup
+  s.authors     = ['Alexander E. Fischer']
+  s.email       = ['aef@raxys.net']
+  s.homepage    = 'http://github.com/aef/namespace_helper'
+  s.license     = 'ISC'
+  s.summary     = 'Helper methods for class/module namespace handling'
+  s.description = <<-DESCRIPTION
+NamespaceHelper provides a module with methods to ease namespace handling.
+For example getting the unprefixed name, the namespace parent or a list of
+namespace components of a class or module.
+  DESCRIPTION
+
+  s.rubyforge_project = nil
+  s.has_rdoc          = 'yard'
+  s.extra_rdoc_files  = ['HISTORY.md', 'LICENSE.md']
+
+  s.files         = `git ls-files`.lines.map(&:chomp)
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.lines.map(&:chomp)
+  s.executables   = `git ls-files -- bin/*`.lines.map{|f| File.basename(f.chomp) }
+  s.require_paths = ["lib"]
+
+  s.add_development_dependency('bundler', '~> 1.0.21')
+  s.add_development_dependency('rake', '~> 0.9.2')
+  s.add_development_dependency('rspec', '~> 2.6.0')
+  s.add_development_dependency('simplecov', '~> 0.5.4')
+  s.add_development_dependency('pry', '~> 0.9.8')
+  s.add_development_dependency('yard', '~> 0.7.5')
+  s.add_development_dependency('maruku', '~> 0.6.0')
+
+  s.cert_chain = "#{ENV['GEM_CERT_CHAIN']}".split(':')
+  s.signing_key = ENV['GEM_SIGNING_KEY']
 end
