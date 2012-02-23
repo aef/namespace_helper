@@ -1,5 +1,10 @@
-doc
-.yardoc
+# Project metadata
+nbproject
 .idea
-nbproject/private
-*.gem
+
+doc
+coverage
+pkg
+.yardoc
+.rbx
+*.rbc
