@@ -72,35 +72,43 @@ Or for bundler Gemfiles:
 gem 'namespace_helper', require: 'namespace_helper/bare'
 ~~~~~
 
-The first way to load the library won't touch any existing classes but you need
-to extend every class or module which should support the helper methods
-manually:
+### Usage
+
+In normal mode, you can now ask every class or module namespace related
+stuff:
 
 ~~~~~ ruby
-require 'aef/namespace_helper'
+Process::Status.namespace_components
+# => [Process, Process::Status]
 
-module First
-  class Second
-  end
-end
+Process::Status.namespace_component_names
+# => ["Process", "Process::Status"]
 
+Process::Status.unprefixed_namespace_component_names
+# => ["Process", "Status"]
+~~~~~
+
+See {Aef::NamespaceHelper::ClassMethods} for a list of available methods.
+
+If you're using the bare mode, you have to manually extend a class or module
+for which you require namespace information:
+
+~~~~~ ruby
 File::Constants.extend(Aef::NamespaceHelper::ClassMethods)
 
-File::Constants.unprefixed_name # => "Constants"
-File::Constants.namespace_parent # => File
-File::Constants.namespace_parent_name # => "File"
+File::Constants.unprefixed_name
+# => "Constants"
+
+File::Constants.namespace_parent
+# => File
+
+File::Constants.namespace_parent_name
+# => "File"
 ~~~~~
 
 The other way to load the library will enable the helper methods in every
 module and class:
 
-~~~~~ ruby
-require 'aef/namespace_helper/core_extension'
-
-Process::Status.namespace_components # => [Process, Process::Status]
-Process::Status.namespace_component_names # => ["Process", "Process::Status"]
-Process::Status.unprefixed_namespace_component_names # => ["Process", "Status"]
-~~~~~
 
 Requirements
 ------------

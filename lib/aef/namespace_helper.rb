@@ -31,8 +31,6 @@ module Aef
   # This module is intended to be included into the Class and/or Module class
   # to make namespace helper methods available in all classes/modules.
   # 
-  # @example Make the helper methods available in all classes/modules
-  #   require 'aef/namespace_helper/core_extension'
   # @see Aef::NamespaceHelper::ClassMethods
   module NamespaceHelper
   

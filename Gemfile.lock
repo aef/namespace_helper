@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    namespace_helper (0.1.0)
+    namespace_helper (1.0.0rc1)
 
 GEM
   remote: http://rubygems.org/
