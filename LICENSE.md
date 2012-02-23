@@ -1,8 +1,6 @@
-# encoding: UTF-8
-=begin
 Copyright Alexander E. Fischer <aef@raxys.net>, 2012
 
-This file is part of NamespaceHelper.
+NamespaceHelper is licensed under the following ISC-style license:
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
@@ -15,12 +13,3 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
-=end
-
-unless defined?(Rubinius)
-  require 'simplecov'
-  SimpleCov.start
-end
-
-require 'rspec'
-require 'pry'
