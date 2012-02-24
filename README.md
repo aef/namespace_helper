@@ -35,7 +35,7 @@ This project tries to conform to:
 Additional facts:
 
 * Written purely in Ruby.
-* Intended to be used with Ruby 1.9.2 or compatible.
+* Intended to be used with Ruby 1.8.7 or higher.
 * Extends core classes. This can be disabled through bare mode.
 
 Synopsis
