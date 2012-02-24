@@ -35,7 +35,7 @@ module Aef
   module NamespaceHelper
   
     # The current library version
-    VERSION = '1.0.0rc1'.freeze
+    VERSION = '1.0.0'.freeze
 
     protected
 
