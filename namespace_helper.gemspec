@@ -17,9 +17,7 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
-$LOAD_PATH << 'lib'
-
-require 'namespace_helper/bare'
+require File.expand_path('../lib/aef/namespace_helper/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = 'namespace_helper'
@@ -37,20 +35,21 @@ namespace components of a class or module.
 
   s.rubyforge_project = nil
   s.has_rdoc          = 'yard'
-  s.extra_rdoc_files  = ['HISTORY.md', 'LICENSE.md']
+  s.extra_rdoc_files  = ['HISTORY.md', 'LICENSE.md'] 
 
   s.files         = `git ls-files`.lines.map(&:chomp)
   s.test_files    = `git ls-files -- {test,spec,features}/*`.lines.map(&:chomp)
   s.executables   = `git ls-files -- bin/*`.lines.map{|f| File.basename(f.chomp) }
   s.require_paths = ["lib"]
 
-  s.add_development_dependency('bundler', '~> 1.0.21')
+  s.required_ruby_version = '>= 1.8.7'
+
+  s.add_development_dependency('bundler', '~> 1.1.3')
   s.add_development_dependency('rake', '~> 0.9.2')
-  s.add_development_dependency('rspec', '~> 2.6.0')
-  s.add_development_dependency('simplecov', '~> 0.5.4')
+  s.add_development_dependency('rspec', '~> 2.8.0')
+  s.add_development_dependency('simplecov', '~> 0.6.1')
   s.add_development_dependency('pry', '~> 0.9.8')
   s.add_development_dependency('yard', '~> 0.7.5')
-  s.add_development_dependency('maruku', '~> 0.6.0')
 
   s.cert_chain = "#{ENV['GEM_CERT_CHAIN']}".split(':')
   s.signing_key = ENV['GEM_SIGNING_KEY']

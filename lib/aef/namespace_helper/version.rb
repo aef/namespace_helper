@@ -17,32 +17,14 @@ OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 =end
 
-require 'bundler/gem_tasks'
-require 'rake'
-require 'pathname'
-require 'yard'
-require 'rspec/core/rake_task'
+module Aef
+  module NamespaceHelper
 
-RSpec::Core::RakeTask.new
+    # The currently loaded library version
+    #
+    # Using Semantic Versioning (2.0.0-rc.1) rules
+    # @see http://semver.org/
+    VERSION = '1.0.1'.freeze
 
-YARD::Rake::YardocTask.new('doc')
-
-desc "Removes temporary project files"
-task :clean do
-  %w{doc coverage pkg .yardoc .rbx Gemfile.lock}.map{|name| Pathname.new(name) }.each do |path|
-    path.rmtree if path.exist?
   end
-
-  Pathname.glob('*.gem').each &:delete
-  Pathname.glob('**/*.rbc').each &:delete
 end
-
-desc "Opens an interactive console with the library loaded"
-task :console do
-  Bundler.setup
-  require 'pry'
-  require 'namespace_helper'
-  Pry.start
-end
-
-task :default => :spec
