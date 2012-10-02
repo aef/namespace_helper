@@ -1,4 +1,11 @@
-1.0.1 / 2012-??-??
+1.0.2 / 2012-10-02
+==================
+
+* 1 minor enhancement
+
+  * Updated documentation
+
+1.0.1 / 2012-04-04
 ==================
 
 * 3 minor enhancements
