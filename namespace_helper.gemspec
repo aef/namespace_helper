@@ -28,9 +28,9 @@ Gem::Specification.new do |s|
   s.license     = 'ISC'
   s.summary     = 'Helper methods for class/module namespace handling'
   s.description = <<-DESCRIPTION
-NamespaceHelper provides a module with methods to ease namespace handling.
-For example getting the unprefixed name, the namespace parent or a list of
-namespace components of a class or module.
+NamespaceHelper is a Ruby library providing a module with methods to ease
+namespace handling. For example getting the unprefixed name, the namespace
+parent or a list of namespace components of a class or module.
   DESCRIPTION
 
   s.rubyforge_project = nil

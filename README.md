@@ -3,6 +3,7 @@ NamespaceHelper
 
 [![Build Status](https://secure.travis-ci.org/aef/namespace_helper.png)](
 https://secure.travis-ci.org/aef/namespace_helper)
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/aef/namespace_helper)
 
 * [Documentation][docs]
 * [Project][project]
@@ -13,9 +14,9 @@ https://secure.travis-ci.org/aef/namespace_helper)
 Description
 -----------
 
-NamespaceHelper provides a module with methods to ease namespace handling.
-For example getting the unprefixed name, the namespace parent or a list of
-namespace components of a class or module.
+NamespaceHelper is a Ruby library providing a module with methods to ease
+namespace handling. For example getting the unprefixed name, the namespace
+parent or a list of namespace components of a class or module.
 
 Features / Problems
 -------------------
@@ -160,7 +161,7 @@ If something goes wrong you should be noticed through failing examples.
 Development
 -----------
 
-### Bugs Reports and Feature Requests
+### Bug reports and feature requests
 
 Please use the [issue tracker][issues] on github.com to let me know about errors
 or ideas for improvement of this software.
@@ -169,11 +170,27 @@ or ideas for improvement of this software.
 
 ### Source code
 
-This software is developed in the source code management system git hosted
-at github.com. You can download the most recent sourcecode through the
-following command:
+This software is developed in the source code management system Git. There are
+several synchronized mirror repositories available:
 
-    git clone https://github.com/aef/namespace_helper.git
+* GitHub
+    
+    URL: https://github.com/aef/namespace_helper.git
+
+* Gitorious
+    
+    URL: https://git.gitorious.org/namespace_helper/namespace_helper.git
+
+* BitBucket
+    
+    URL: https://bitbucket.org/alefi/namespace_helper.git
+
+You can get the latest source code with the following command, while
+exchanging the placeholder for one of the mirror URLs:
+
+    git clone MIRROR_URL
+
+#### Tags
 
 The final commit before each released gem version will be marked by a tag
 named like the version with a prefixed lower-case "v", as required by Semantic
